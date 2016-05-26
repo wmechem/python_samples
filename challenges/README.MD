@@ -1,1 +1,1 @@
-# some simple code chalenges from tech screens
+some simple code challenges from tech screens
