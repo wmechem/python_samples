@@ -1,2 +1,7 @@
 # python_samples
-Sample python code
+
+Various code exercises written in Python
+
+No warranty whatsoever.
+
+
