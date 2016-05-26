@@ -1,0 +1,42 @@
+'''
+1) You're given a list that contains the prices of a stock during one trading day, 
+at 1 minute intervals. The list is chronologically ordered. You want to buy and sell the stock 
+the same day, and maximize your profit. 
+Write a method that takes the list and returns the time to buy and time to sell in order to 
+maximize your profit. *
+'''
+
+
+import random
+
+
+mins_in_trading_day = int(60*6.5)
+
+#generate some random prices
+prices = [int(1000*random.random()) for i in xrange(mins_in_trading_day)]
+print 'Checking %s prices' % str(len(prices))
+
+
+buy_time = 0
+sell_time = 0
+max_profit = 0
+
+for t in xrange(len(prices)-1):
+	
+	try:
+		buy_price = prices[t]
+		prices.pop(0)
+
+		for t2 in xrange(len(prices)-1):
+			sell_price = prices[t2]
+			profit = sell_price - buy_price
+			if profit > max_profit:
+				max_profit = profit
+				buy_time = t
+				sell_time = t2
+	except:
+		pass
+
+print 'minute in day to buy: ',buy_time
+print 'minute in day to sell: ', sell_time
+print 'max_profit', max_profit
